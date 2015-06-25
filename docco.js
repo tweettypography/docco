@@ -133,7 +133,7 @@
 
   write = function(source, sections, config) {
     var destination, first, firstSection, hasTitle, html, title;
-    destination = function(file) {
+    destination = function(file, iscss) {
 
         if (path.dirname(file) != '.') {
           var destinationDirectory, fullPath, relativeCssPath;
