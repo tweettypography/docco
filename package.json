@@ -2,7 +2,10 @@
   "name":         "docco-multidir",
   "description":  "Updated docco to work better with multiple files in multiple directories",
   "keywords":     ["documentation", "docs", "generator", "literate", "coffeescript"],
-  "author":       "Lare Grodzicki",
+  "author": {
+    "name": "Lare Grodzicki",
+    "email": "lare.gr.dev@gmail.com"
+  },
   "version":      "0.0.1",
   "license":      [
     {
