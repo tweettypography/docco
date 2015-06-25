@@ -1,13 +1,18 @@
 {
-  "name":         "docco",
-  "description":  "The Quick and Dirty Literate Programming Documentation Generator",
+  "name":         "docco-multidir",
+  "description":  "Updated docco to work better with multiple files in multiple directories",
   "keywords":     ["documentation", "docs", "generator", "literate", "coffeescript"],
-  "author":       "Jeremy Ashkenas",
-  "version":      "0.7.0",
-  "license":      "MIT",
+  "author":       "Lare Grodzicki",
+  "version":      "0.0.1",
+  "license":      [
+    {
+      "type": "MIT",
+      "url": "http://lareg.mit-license.org"
+    }
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jashkenas/docco.git"
+    "url": "https://github.com/lareg/docco-multidir.git"
   },
   "engines": {
     "node":       ">=0.2.0"

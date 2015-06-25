@@ -18,12 +18,18 @@
           <div id="jump_wrapper">
           <div id="jump_page_wrapper">
             <div id="jump_page">
-              <% for (var i=0, l=sources.length; i<l; i++) { %>
-                <% var source = sources[i]; %>
-                <a class="source" href="<%= path.basename(destination(source)) %>">
-                  <%= path.basename(source) %>
-                </a>
-              <% } %>
+            <% 
+              var sources_hash = {};
+              for (var i=0, l=sources.length; i<l; i++) {
+                var source = sources[i]; 
+                var directory = path.dirname(source) || 'Top Level'; 
+                var exists = directory in sources_hash;
+                sources_hash[directory] = true; %>
+              <% if( !exists ) { %><h3><%= directory %></h3><% } %>
+              <a class="source" href="<%= path.basename(destination(source)) %>">
+                <%= path.basename(source) %>
+              </a>
+            <% } %>
             </div>
           </div>
         </li>
@@ -33,7 +39,9 @@
         <% if (!hasTitle) { %>
           <li id="title">
               <div class="annotation">
-                  <h1><%= title %></h1>
+                    <h1>{Insert Project Name Here}</h1>
+                    <h2>[file] : <strong><%= title %></strong></h2>
+                    <h3>[path] : {Insert path name here}</h3>
               </div>
           </li>
         <% } %>

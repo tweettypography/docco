@@ -134,7 +134,22 @@
   write = function(source, sections, config) {
     var destination, first, firstSection, hasTitle, html, title;
     destination = function(file) {
-      return path.join(config.output, path.basename(file, path.extname(file)) + '.html');
+
+        if (path.dirname(file) != '.') {
+          var destinationDirectory, fullPath, relativeCssPath;
+          // Join the configured output directory to the selected file's path name
+          destinationDirectory = path.join(config.output, path.dirname(file));
+          // Make the destination subdirectory for the doc output 
+          fs.mkdirsSync(destinationDirectory);
+          // Set the full file path and relative path to the css file
+          fullPath = path.join(destinationDirectory,path.basename(file, path.extname(file))) + '.html';
+          relativeCssPath = path.relative(destinationDirectory,config.output) + '/' + path.basename(config.css);
+        } else {
+          // Set the value as project root (source is not in a folder)
+          fullPath = path.join(config.output, path.basename(file, path.extname(file))) + '.html';
+          relativeCssPath = path.basename(config.css);
+        };
+      return iscss ? relativeCssPath : fullPath;
     };
     firstSection = _.find(sections, function(section) {
       return section.docsText.length > 0;
@@ -146,7 +161,7 @@
     title = hasTitle ? first.text : path.basename(source);
     html = config.template({
       sources: config.sources,
-      css: path.basename(config.css),
+      css: destination(source, true),
       title: title,
       hasTitle: hasTitle,
       sections: sections,
