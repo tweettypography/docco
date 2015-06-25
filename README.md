@@ -1,3 +1,5 @@
+## NON-WORKING COPY.  DO NOT USE
+
 ## docco-multidir
 
 Docco-multidir is (hopefully) an improvement over the original docco written by jashkenas (http://jashkenas.github.com/docco/).
