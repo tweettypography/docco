@@ -1,13 +1,19 @@
 {
-  "name":         "docco-multidir",
-  "description":  "Updated docco to work better with multiple files in multiple directories",
-  "keywords":     ["documentation", "docs", "generator", "literate", "coffeescript"],
+  "name": "docco-multidir",
+  "description": "Updated docco to work better with multiple files in multiple directories",
+  "keywords": [
+    "documentation",
+    "docs",
+    "generator",
+    "literate",
+    "coffeescript"
+  ],
   "author": {
     "name": "Lare Grodzicki",
     "email": "lare.gr.dev@gmail.com"
   },
-  "version":      "0.0.1",
-  "license":      [
+  "version": "0.0.2",
+  "license": [
     {
       "type": "MIT",
       "url": "http://lareg.mit-license.org"
@@ -18,17 +24,17 @@
     "url": "https://github.com/lareg/docco-multidir.git"
   },
   "engines": {
-    "node":       ">=0.2.0"
+    "node": ">=0.2.0"
   },
   "dependencies": {
-    "commander":  ">= 0.5.2",
-    "marked":     ">= 0.2.7",
-    "fs-extra":   ">= 0.6.0",
+    "commander": ">= 0.5.2",
+    "marked": ">= 0.2.7",
+    "fs-extra": ">= 0.6.0",
     "underscore": ">= 1.0.0",
     "highlight.js": ">= 8.0.x"
   },
-  "main" :        "./docco",
+  "main": "./docco",
   "bin": {
-    "docco":      "./bin/docco"
+    "docco": "./bin/docco"
   }
 }
