@@ -125,7 +125,8 @@
       section = sections[i];
       code = highlightjs.highlight(language.name, section.codeText).value;
       code = code.replace(/\s+$/, '');
-      section.codeHtml = "<div class='highlight'><pre>" + code + "</pre></div>";
+      //section.codeHtml = "<div class='highlight'><pre>" + code + "</pre></div>";
+      section.codeHtml = "<pre class=\"language-jsx\"><code>" + code + "</code></pre>";
       results.push(section.docsHtml = marked(section.docsText));
     }
     return results;
